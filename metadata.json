@@ -1,0 +1,7 @@
+{
+  "name": "BarkNeighborhood",
+  "description": "הרשת החברתית המובילה לבעלי כלבים בשכונה. מצאו גינות כלבים, חנויות אוכל, וצרו קשר עם השכנים על ארבע.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
