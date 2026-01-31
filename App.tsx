@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from './components/Layout';
 import Feed from './components/Feed';
 import MapExplorer from './components/MapExplorer';
@@ -11,6 +11,7 @@ const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<Tab>(Tab.FEED);
   const [lang, setLang] = useState<Lang>('he');
   const [fontSize, setFontSize] = useState<'s' | 'm' | 'l'>('m');
+  const [isDark, setIsDark] = useState<boolean>(true);
 
   const renderContent = () => {
     switch (activeTab) {
@@ -22,18 +23,22 @@ const App: React.FC = () => {
   };
 
   return (
-    <Layout 
-      activeTab={activeTab} 
-      setActiveTab={setActiveTab} 
-      lang={lang} 
-      setLang={setLang}
-      fontSize={fontSize}
-      setFontSize={setFontSize}
-    >
-      <div className="animate-in fade-in slide-in-from-bottom-2 duration-500">
-        {renderContent()}
-      </div>
-    </Layout>
+    <div className={isDark ? 'dark' : ''}>
+      <Layout 
+        activeTab={activeTab} 
+        setActiveTab={setActiveTab} 
+        lang={lang} 
+        setLang={setLang}
+        fontSize={fontSize}
+        setFontSize={setFontSize}
+        isDark={isDark}
+        setIsDark={setIsDark}
+      >
+        <div className="animate-in fade-in slide-in-from-bottom-2 duration-500">
+          {renderContent()}
+        </div>
+      </Layout>
+    </div>
   );
 };
 
