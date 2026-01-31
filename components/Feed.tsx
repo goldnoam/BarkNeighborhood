@@ -52,7 +52,7 @@ const Feed: React.FC<FeedProps> = ({ lang }) => {
             placeholder={t.searchDog}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className={`w-full bg-slate-100 dark:bg-slate-800 rounded-xl py-3 ${lang === 'he' ? 'pr-10 pl-4' : 'pl-10 pr-4'} text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all dark:text-white dark:border-slate-700 border border-transparent`}
+            className={`w-full bg-slate-100 dark:bg-slate-800 rounded-xl py-3 ${lang === 'he' ? 'pr-10 pl-4' : 'pl-10 pr-4'} text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all text-red-600 dark:text-red-500 dark:border-slate-700 border border-transparent`}
           />
         </div>
       </div>
